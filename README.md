@@ -14,6 +14,8 @@ Access revoked. He are now, very upset and cry all night about this.
 
 To the person in question: You got caught lying about something there was literal evidence for. The crying is a bit embarrassing at this point. Since you loved sharing it so much, here it is, free for everyone now. You're welcome :D
 
+![retard](.media/1.png)
+
 ---
 
 ## What's removed
