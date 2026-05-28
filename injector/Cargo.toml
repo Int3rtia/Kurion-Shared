@@ -1,0 +1,52 @@
+[package]
+name = "injector"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+debug_console = ["kurion_sys/debug_console"]
+
+[dependencies]
+windows = { version = "0.58", features = [
+    "Win32_Foundation",
+    "Win32_System_Com",
+    "Win32_System_Ole",
+    "Win32_System_Registry",
+    "Win32_Storage_FileSystem",
+    "Win32_System_ProcessStatus",
+    "Win32_System_Diagnostics_ToolHelp",
+    "Win32_System_Threading",
+    "Win32_System_Pipes",
+    "Win32_System_IO",
+    "Win32_System_SystemInformation",
+    "Win32_UI_WindowsAndMessaging",
+    "Win32_Graphics_Gdi",
+    "Win32_UI_Shell",
+    "Win32_Globalization",
+    "Win32_System_LibraryLoader",
+    "Win32_Security",
+    "Win32_System_Environment",
+    "Win32_System_Time",
+    "Win32_System_TaskScheduler",
+] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+anyhow = "1.0"
+hex = "0.4"
+kurion_core = { path = "../core" }
+kurion_sys = { path = "../sys" }
+kurion_crypto = { path = "../crypto" }
+kurion_extractor = { path = "../extractor" }
+obfstr = "0.4"
+ureq = { version = "2.10", default-features = false, features = ["tls", "json"] }
+zip = { version = "2.1", default-features = false, features = ["deflate"] }
+
+walkdir = "2.5"
+regex-lite = "0.1"
+
+[build-dependencies]
+winres = "0.1"
+flate2 = "1"
+
+[dependencies.flate2]
+version = "1"

@@ -1,0 +1,9 @@
+[package]
+name = "kurion_core"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+windows = { version = "0.58", features = ["Win32_Foundation"] }
+bitflags = "2.4"
+hex = "0.4"

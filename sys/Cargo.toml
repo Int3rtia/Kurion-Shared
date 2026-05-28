@@ -1,0 +1,38 @@
+[package]
+name = "kurion_sys"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+debug_console = []
+
+[dependencies]
+windows = { version = "0.58", features = [
+    "implement",
+    "Win32_Foundation",
+    "Win32_System_SystemServices",
+    "Win32_System_LibraryLoader",
+    "Win32_System_Memory",
+    "Win32_System_Diagnostics_Debug",
+    "Win32_System_Diagnostics_ToolHelp",
+    "Win32_System_Threading",
+    "Win32_System_Console",
+    "Win32_Security",
+    "Win32_Storage_FileSystem",
+    "Win32_System_Com",
+    "Win32_System_Ole",
+    "Win32_System_Rpc",
+    "Win32_System_Variant",
+    "Win32_System_Kernel",
+    "Win32_System_SystemInformation",
+    "Win32_UI_WindowsAndMessaging",
+] }
+
+windows-core = "0.58"
+dinvk = "0.4.2"
+uwd = { version = "0.3.5", features = ["desync"] }
+hypnus = "0.2.0"
+
+
+obfstr = "0.4"
+kurion_core = { path = "../core" }

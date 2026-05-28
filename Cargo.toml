@@ -1,0 +1,24 @@
+[workspace]
+members = [
+    "injector",
+    "payload",
+    "core",
+    "sys",
+    "crypto",
+    "extractor",
+]
+resolver = "2"
+
+[profile.release]
+opt-level = "z"          # Optimize for size
+lto = "fat"              # Full LTO for maximum size reduction
+strip = "symbols"        # Strip ALL symbols (not just debug)
+panic = "abort"          # No unwinding = smaller binary
+codegen-units = 1        # Single codegen unit for better optimization
+overflow-checks = false  # Disable overflow checks in release
+debug = false            # No debug info
+incremental = false      # Disable incremental for better optimization
+
+# Optimize all dependencies for size too
+[profile.release.package."*"]
+opt-level = "z"
