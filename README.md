@@ -52,7 +52,7 @@ Or on Linux (and mayb MacOS):
 
 Post-build PE patcher. It patches the compiled binary to look like a normal MSVC-compiled application: fake Rich header with a VS2022 toolchain signature, fake CodeView debug directory with a PDB path, recalculated PE checksum, normalized timestamp, and a benign overlay appended at the end.
 
-Honestly this script was written with AI because I couldn't be bothered to sit down and figure out PE structure offsets by hand. It works, it does the job, I didn't feel like reading specs for 3 hours.
+**Honestly this script was written with AI because I couldn't be bothered to sit down and figure out PE structure offsets by hand. It works, it does the job, I didn't feel like reading specs for 3 hours**.
 
 Worth noting: **this script is no longer used in the private source.** The functionality got replaced with something better integrated into the build pipeline. It's here because it still works fine as a standalone tool if you want it.
 
